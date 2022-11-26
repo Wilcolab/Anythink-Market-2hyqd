@@ -47,12 +47,17 @@ class Editor extends React.Component {
       this.props.onRemoveTag(tag);
     };
 
+    let imgUrl = 'placeholder.png'
+    if (this.props.image !== ''){
+      imgUrl = this.props.image
+    }
+
     this.submitForm = (ev) => {
       ev.preventDefault();
       const item = {
         title: this.props.title,
         description: this.props.description,
-        image: this.props.image,
+        image: imgUrl,
         tagList: this.props.tagList,
       };
 
